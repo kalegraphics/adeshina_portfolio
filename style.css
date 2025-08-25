@@ -110,11 +110,11 @@ footer .contact-link:hover {
   display: block;
 }
 
-/* Navbar */
+/* Navbar (transparent over hero) */
 .navbar {
-  background: transparent;   /* Transparent background */
+  background: transparent;
   padding: 15px 20px;
-  position: absolute;       /* Place over hero */
+  position: absolute; /* sits on top of hero */
   top: 0;
   width: 100%;
   z-index: 1000;
@@ -129,12 +129,14 @@ footer .contact-link:hover {
 }
 
 .logo {
-  color: hsl(40, 23%, 97%);
+  color: #FFD700;
   margin: 0;
   font-size: 1.5em;
   font-weight: bold;
+  text-decoration: none;
 }
 
+/* Desktop links */
 .nav-links {
   list-style: none;
   display: flex;
@@ -142,11 +144,7 @@ footer .contact-link:hover {
   margin: 0;
   padding: 0;
 }
-
-.nav-links li {
-  display: inline;
-}
-
+.nav-links li { display: inline; }
 .nav-links a {
   color: white;
   text-decoration: none;
@@ -154,9 +152,48 @@ footer .contact-link:hover {
   transition: color 0.3s;
   font-weight: 500;
 }
+.nav-links a:hover { color: #FFD700; }
 
-.nav-links a:hover {
-  color: #FFD700;
+/* Hamburger button (hidden on desktop) */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.menu-toggle .bar {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: #fff;
+  margin: 6px 0;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .menu-toggle { display: block; }
+
+  /* Hide desktop menu; show dropdown when opened */
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    display: none;                /* hidden by default */
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px;
+    width: min(75vw, 280px);
+    border-radius: 12px;
+    background: rgba(0,0,0,0.6);  /* readable over any hero */
+    backdrop-filter: blur(10px);   /* soft glass look */
+  }
+  .nav-links.open { display: flex; }
+
+  /* Animate hamburger to X when open */
+  .menu-toggle.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .menu-toggle.active .bar:nth-child(2) { opacity: 0; }
+  .menu-toggle.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 }
 
 

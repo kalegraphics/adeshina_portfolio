@@ -7,11 +7,18 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
+<!-- Navigation Bar -->
 <nav class="navbar">
   <div class="nav-container">
-    <h2 class="logo">KALEWORLD</h2>
-    <ul class="nav-links">
+    <a href="index.html" class="logo">KALEWORLD</a>
+
+    <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <ul id="primary-nav" class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="programming.html">Programming</a></li>
       <li><a href="design.html">Design</a></li>
@@ -20,6 +27,7 @@
     </ul>
   </div>
 </nav>
+
 
 
   <!-- Hero -->
