@@ -152,7 +152,7 @@ footer .contact-link:hover {
   transition: color 0.3s;
   font-weight: 500;
 }
-.nav-links a:hover { color: #FFD700; }
+.nav-links a:hover { color: #ffffff; }
 
 /* Hamburger button (hidden on desktop) */
 .menu-toggle {
