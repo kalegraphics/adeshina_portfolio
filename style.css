@@ -196,4 +196,10 @@ footer .contact-link:hover {
   .menu-toggle.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 }
 
+/* Prevent horizontal overflow */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 
